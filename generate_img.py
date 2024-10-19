@@ -99,11 +99,11 @@ def drawUserImg(title,totalRating,rankRating,userName,icon,plate,title_rare="Nor
 
     totalRatingImg = Image.open(rf"{maimaiImgPath}/shougou/UI_CMN_Shougou_{title_rare.title()}.png")
     totalRatingDraw = ImageDraw.Draw(totalRatingImg)
-    font = ImageFont.truetype(rf'{materialPath}/GenSenMaruGothicTW-Bold.ttf', 11)
+    font = ImageFont.truetype(rf'{materialPath}/GenSenMaruGothicTW-Bold.ttf', 14)
     _, _, text_width, text_height = totalRatingDraw.textbbox((0, 0), title, font=font)
     draw_text_with_stroke_and_spacing(
         totalRatingDraw,
-        (abs(240-text_width)//2, 7),
+        (abs(250-text_width)//2, 7),
         title,
         font=font,
         fill_color="white",
@@ -214,10 +214,8 @@ def drawCharaImgNewSub(charaId, charaLevel):
         main_star = Image.open(rf"{maimaiImgPath}/maicard/UI_CMN_Chara_star_big_MAX.png").convert("RGBA").resize((53, 50))
         sub_star = Image.open(rf"{maimaiImgPath}/maicard/UI_CMN_Chara_star_small_MAX.png").convert("RGBA").resize((35, 35))
     elif star >= 5:
-        main_star = Image.open(rf"{maimaiImgPath}/maicard/UI_CMN_Chara_Star_big.png").convert("RGBA").resize(
-            (53, 50))
-        sub_star = Image.open(rf"{maimaiImgPath}/maicard/UI_CMN_Chara_Star_Small.png").convert("RGBA").resize(
-            (35, 35))
+        main_star = Image.open(rf"{maimaiImgPath}/maicard/UI_CMN_Chara_Star_big.png").convert("RGBA").resize((53, 50))
+        sub_star = Image.open(rf"{maimaiImgPath}/maicard/UI_CMN_Chara_Star_Small.png").convert("RGBA").resize((35, 35))
     else:
         main_star = Image.open(rf"{maimaiImgPath}/maicard/UI_CMN_Chara_Star_Big_Gauge01_{progress}.png").convert("RGBA").resize((53, 50))
         sub_star = Image.open(rf"{maimaiImgPath}/maicard/UI_CMN_Chara_Star_Small.png").convert("RGBA").resize((35, 35))
